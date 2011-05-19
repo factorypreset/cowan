@@ -1,0 +1,16 @@
+lib
+include
+bin
+*.pyc
+*~
+.Python
+dev.db
+.svn
+log
+src
+*.swp
+.tmp_*
+dev-log/*
+.idea/workspace.xml
+.idea/dictionaries/*
+.idea/*
