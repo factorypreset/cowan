@@ -140,7 +140,7 @@ TODO
 ----
 
 * Make input and output paths configurable, or pass them in via command
-  line params.
+  line options.
 
 * Properly handle fuzzy overlay methods other than 'SUM'. At present the
   script only works when 'AND' sources files are listed after the 'SUM'
