@@ -46,15 +46,15 @@ combine_fuzzies.py script (possibly not a very good assumption).
 2. Configure source raster files
 
 Open source_files.py. This defines a list called SOURCE_FILES. Each element in
-the list is a dictionary represents one fuzzified raster file, and has the
-following members (i.e. key/value pairs):
+the list is a dictionary representing one fuzzified raster file, and having
+the following members (i.e. key/value pairs):
 
   * name: an arbitrary name
   * file_name: name of the raster file on your file system
   * overlay: name of the fuzzy overlay method to be used. Currently supports
     'SUM' and 'AND'. Possibly others too, but they are untested.
   * invert: a flag indicating whether the fuzzified raster should be inverted
-    prior to processing. This is useful in cases where desirable values are 0
+    prior to processing. This is useful in cases where ideal values are 0
     rather than 1.
 
 3. Configure scenarios
@@ -87,8 +87,7 @@ just double-click on the combine_fuzzies.py file from Windows Explorer.
 
 One output raster will be calculated for each scenario, based on the
 preferences you defined. They will be found in the output/ directory
-(which is a subfolder of the directory containing combine_fuzzies.py. Again,
-this output path might be a questionable assumption).
+(which is a subfolder of the directory containing combine_fuzzies.py).
 
 5. Re-running the script
 
@@ -113,8 +112,8 @@ TODO
 
 * Write a script to generate (fuzzify) the source rasters.
 
+* Need to write some unit tests. Of course.
+
 * Rework this to use open source tools rather than relying on proprietary
   ESRI software. Ideally before my student evaluation of ArcGIS expires.
-
-* Need to write some unit tests. Of course.
 
