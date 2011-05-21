@@ -58,6 +58,19 @@ the following members (i.e. key/value pairs):
     prior to processing. This is useful in cases where ideal values are 0
     rather than 1.
 
+For example::
+
+  SOURCE_FILES = [
+      {'name': 'fauna', 'file_name': 'fuz_fauna2', 'overlay': 'SUM', 'invert': False},
+      {'name': 'flora', 'file_name': 'fuz_flora2', 'overlay': 'SUM', 'invert': False},
+      {'name': 'slope', 'file_name': 'fuz_slopeper', 'overlay': 'SUM', 'invert': False},
+      {'name': 'fire', 'file_name': 'fuz_fire1', 'overlay': 'SUM', 'invert': True},
+      {'name': 'ftrail', 'file_name': 'fuz_firetrail', 'overlay': 'SUM', 'invert': False},
+      {'name': 'erosion', 'file_name': 'fuz_erosion1', 'overlay': 'SUM', 'invert': True},
+      {'name': 'mangroves', 'file_name': 'fuz_mangr2', 'overlay': 'AND', 'invert': False},
+      {'name': 'creeks', 'file_name': 'fuz_creek4', 'overlay': 'AND', 'invert': False},
+  ]
+
 3. Configure scenarios
 
 A scenario defines a set of subjective preferences for the values described in
@@ -76,6 +89,31 @@ pairs and must be of the following form:
 
 Ideally all weighting values in a scenario should add up to 1, although
 this is not enforced in the script.
+
+For example::
+
+  SCENARIOS = [{
+      'name': 'conserv',
+      'fauna': 0.3,
+      'flora': 0.3,
+      'mangroves': 0.3,
+      'creeks': 0.02,
+      'slope': 0,
+      'fire': 0.04,
+      'ftrail': 0.02,
+      'erosion': 0.02
+  }, {
+      'name': 'min_cost',
+      'fauna': 0.01,
+      'flora': 0.01,
+      'mangroves': 0.03,
+      'creeks': 0.1,
+      'slope': 0.3,
+      'fire': 0.1,
+      'ftrail': 0.25,
+      'erosion': 0.2
+  }]
+
 
 4. Execute script
 
