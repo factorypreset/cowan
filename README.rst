@@ -26,12 +26,13 @@ assistance:
 combine_fuzzies.py
 ------------------
 
-This script assumes you have a number of fuzzified raster files. These should
-have been normalised to a scale with values between 0 and 1, based on
-whatever fuzzy membership function you choose (most likely a monotonic,
-trapezoidal, triangular or gaussian function). At present we do not provide
-a script for generating these fuzzified rasters, although that would have been
-awesome.
+This script assumes you have a number of fuzzified raster files covering the
+same geographic extent, with the same spatial reference system and projection.
+These should have been normalised to a scale with values between 0 and 1,
+based on whatever fuzzy membership function you choose (most likely a
+monotonic, trapezoidal, triangular or gaussian function). At present we do not
+provide a script for generating these fuzzified rasters, although that would
+have been awesome.
 
 The combine_fuzzies.py script itself enables a linear weighted multi-criteria
 analysis to be performed on the resulting fuzzified raster files.
@@ -111,6 +112,11 @@ TODO
   number of rasters to be passed in at once. We should make use of that.
 
 * Write a script to generate (fuzzify) the source rasters.
+
+* Handle different geographic extents, spatial references and/or projections.
+
+* Automatically identify positions or areas with the highest overall score
+  across multiple scenarios.
 
 * Need to write some unit tests. Of course.
 
