@@ -1,7 +1,7 @@
 # combine_fuzzies.py
 #
 # Created: 2011-05-12
-# Version: 0.1
+# Version: 0.2
 # Author: Bo Daley <bo@factorypreset.com>
 # Description: Combines arbitrary number of fuzzified rasters with given weights
 
@@ -11,7 +11,7 @@ from arcpy.sa import *
 import os
 from raster_input import RasterInput
 from scenarios import SCENARIOS
-from source_files import import SOURCE_FILES
+from source_files import SOURCE_FILES
 
 # Check out Spatial Analyst license
 arcpy.CheckOutExtension("spatial")
@@ -25,7 +25,7 @@ env.overwriteOutput = True
 input_path = os.path.realpath(os.path.dirname(__file__)) + "\\"
 
 # Location of output raster
-output_path = input_path + "output2\\"
+output_path = input_path + "output4\\"
 
 def sum(fuzzies):
     """
@@ -51,6 +51,7 @@ def overlay(fuzzies):
             result_raster = FuzzyOverlay([result_raster, fuzzy.weighted_raster], fuzzy.overlay_method)
         except:
             result_raster = fuzzy.weighted_raster
+    return result_raster
 
 
 def create_output_path():

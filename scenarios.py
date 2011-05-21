@@ -12,7 +12,8 @@ SCENARIOS = [{
 }, {
     'name': 'conserv_e',
     'fauna': 0.3,
-    'flora': 0.3, 'mangroves': 0.3,
+    'flora': 0.3,
+    'mangroves': 0.3,
     'creeks': 0.02,
     'slope': 0,
     'fire': 0.04,
